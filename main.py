@@ -7,6 +7,7 @@ from scoreboard import Scoreboard
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.tracer(0)
+screen.bgcolor('black')
 
 car_manager = CarManager()
 player = Player()
@@ -14,6 +15,13 @@ scoreboard = Scoreboard()
 
 screen.listen()
 screen.onkey(player.go_up, "Up")
+screen.onkey(player.go_down, "Down")
+screen.onkey(player.go_left, "Left")
+screen.onkey(player.go_right, "Right")
+screen.onkey(player.go_up, "w")
+screen.onkey(player.go_down, "s")
+screen.onkey(player.go_left, "a")
+screen.onkey(player.go_right, "d")
 
 game_is_on = True
 while game_is_on:
